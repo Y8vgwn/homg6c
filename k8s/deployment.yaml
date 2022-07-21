@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mihfmk
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mihfmk
+  template:
+    metadata:
+      labels:
+        app: mihfmk
+    spec:
+      containers:
+      - image: okteto.dev/mihfmk:latest
+        name: mihfmk
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "42f07324-5c8a-41a3-b3e4-d6513de01125"
+        - name: Vless_Path
+          value: "/vfcer"
+        - name: Vmess_UUID
+          value: "42f07324-5c8a-41a3-b3e4-d6513de01125"
+        - name: Vmess_Path
+          value: "/bdrgy"
+        - name: Share_Path
+          value: "/v2link"
